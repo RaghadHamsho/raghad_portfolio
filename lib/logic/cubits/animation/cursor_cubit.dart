@@ -1,0 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class CursorCubit extends Cubit<Offset> {
+  CursorCubit() : super(Offset.zero);
+  void update(Offset position) => emit(position);
+}
