@@ -77,7 +77,7 @@ flutter:
   - assets/ehsan/
   - assets/meeting/
   - assets/lotus_buds/
-  - assets/moj
+  - assets/moj/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
