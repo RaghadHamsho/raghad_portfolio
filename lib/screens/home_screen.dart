@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../logic/cubits/navigation/navigation_cubit.dart';
 import '../widgets/animated_background.dart';
 import '../widgets/nav_bar.dart';
@@ -23,11 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _jumpTo(Section s) {
     final ctx = _keys[s]?.currentContext;
     if (ctx != null) {
-      Scrollable.ensureVisible(
-        ctx,
-        duration: const Duration(milliseconds: 700),
-        curve: Curves.easeInOutCubic,
-      );
+      Scrollable.ensureVisible(ctx, duration: const Duration(milliseconds: 700), curve: Curves.easeInOutCubic);
     }
   }
 

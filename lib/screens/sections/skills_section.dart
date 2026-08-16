@@ -5,6 +5,52 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import '../../repositories/portfolio_repository.dart';
 import '../../widgets/section_title.dart';
 
+/// Maps a skill name to a representative Material icon.
+IconData skillIcon(String rawName) {
+  final n = rawName.toLowerCase();
+
+  bool has(List<String> keys) => keys.any(n.contains);
+
+  if (has(['flutter'])) return Icons.flutter_dash;
+  if (has(['dart'])) return Icons.change_history_rounded;
+  if (has(['bloc', 'cubit', 'state'])) return Icons.account_tree_rounded;
+  if (has(['provider', 'riverpod', 'getx'])) return Icons.hub_rounded;
+  if (has(['firebase'])) return Icons.local_fire_department_rounded;
+  if (has(['sql', 'postgres', 'mysql', 'sqlite', 'database', 'hive', 'db'])) {
+    return Icons.storage_rounded;
+  }
+  if (has(['rest', 'api', 'http', 'dio', 'graphql'])) return Icons.api_rounded;
+  if (has(['git', 'github', 'gitlab'])) return Icons.commit_rounded;
+  if (has(['figma', 'ui', 'ux', 'design'])) return Icons.brush_rounded;
+  if (has(['android'])) return Icons.android_rounded;
+  if (has(['ios', 'apple', 'swift'])) return Icons.phone_iphone_rounded;
+  if (has(['web', 'html', 'css', 'javascript', 'js', 'react', 'angular'])) {
+    return Icons.language_rounded;
+  }
+  if (has(['java', 'kotlin', 'c#', 'c++', 'python', 'language'])) {
+    return Icons.code_rounded;
+  }
+  if (has(['clean', 'architecture', 'mvvm', 'mvc', 'solid'])) {
+    return Icons.architecture_rounded;
+  }
+  if (has(['test', 'unit', 'debug'])) return Icons.bug_report_rounded;
+  if (has(['animation', 'motion'])) return Icons.auto_awesome_motion_rounded;
+  if (has(['notification', 'push', 'fcm'])) return Icons.notifications_active_rounded;
+  if (has(['map', 'location', 'gps'])) return Icons.map_rounded;
+  if (has(['payment', 'stripe', 'wallet'])) return Icons.payments_rounded;
+  if (has(['cloud', 'aws', 'docker', 'ci', 'cd', 'devops'])) return Icons.cloud_rounded;
+  if (has(['store', 'deploy', 'publish', 'play'])) return Icons.rocket_launch_rounded;
+  if (has(['team', 'agile', 'scrum', 'communication', 'soft'])) return Icons.groups_rounded;
+  if (has(['performance', 'optimiz'])) return Icons.speed_rounded;
+  if (has(['security', 'auth', 'jwt'])) return Icons.lock_rounded;
+  if (has(['localization', 'i18n', 'language pack', 'arabic', 'english'])) {
+    return Icons.translate_rounded;
+  }
+  if (has(['responsive', 'adaptive'])) return Icons.devices_rounded;
+
+  return Icons.auto_awesome_rounded;
+}
+
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
@@ -30,10 +76,7 @@ class SkillsSection extends StatelessWidget {
 
       for (var j = 0; j < category.items.length; j++) {
         final name = category.items[j];
-
-        final image = (j < category.images.length) ? category.images[j] : 'assets/default.png';
-
-        flat.add(_SkillChipData(name, category.title, color, image));
+        flat.add(_SkillChipData(name, category.title, color, skillIcon(name)));
       }
     }
 
@@ -96,9 +139,9 @@ class _SkillChipData {
   final String name;
   final String category;
   final Color color;
-  final String image;
+  final IconData icon;
 
-  _SkillChipData(this.name, this.category, this.color, this.image);
+  _SkillChipData(this.name, this.category, this.color, this.icon);
 }
 
 class _SkillTile extends StatefulWidget {
@@ -150,14 +193,29 @@ class _SkillTileState extends State<_SkillTile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // ✅ IMAGE FIRST (FIXED ORDER)
-                  SizedBox(
+                  // ✅ ICON FIRST (replaces image)
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 260),
+                    curve: Curves.easeOutBack,
                     height: 60,
                     width: 60,
-                    child: Image.asset(
-                      widget.data.image,
-                      fit: BoxFit.contain,
-                      errorBuilder: (_, __, ___) => const Icon(Icons.broken_image, size: 18),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [c.withOpacity(hovered ? 0.35 : 0.18), c.withOpacity(0.06)],
+                      ),
+                      border: Border.all(color: c.withOpacity(hovered ? 0.75 : 0.35), width: 1.2),
+                      boxShadow: hovered
+                          ? [BoxShadow(color: c.withOpacity(0.45), blurRadius: 18, spreadRadius: -2)]
+                          : const [],
+                    ),
+                    child: AnimatedScale(
+                      scale: hovered ? 1.12 : 1.0,
+                      duration: const Duration(milliseconds: 260),
+                      curve: Curves.easeOut,
+                      child: Icon(widget.data.icon, size: 28, color: c),
                     ),
                   ),
 

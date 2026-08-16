@@ -12,10 +12,8 @@ class PortfolioRepository {
       description: [
         'Developed and maintained scalable cross-platform mobile applications using Flutter and Dart.',
         'Built applications across multiple domains, including business, services, and government-related solutions.',
-        'Developed ministry-use applications supporting operational workflows for public sector users.',
         'Delivered applications used by 100+ active users with reliable performance and stability.',
         'Integrated RESTful APIs and third-party services for efficient data handling.',
-        'Applied clean code principles and best practices to ensure maintainable and scalable codebases.',
         'Improved application performance by up to 30% through code optimization and efficient state management.',
         'Collaborated closely with UI/UX designers to implement responsive and pixel-perfect designs.',
       ],
@@ -32,8 +30,6 @@ class PortfolioRepository {
         'Implemented Firebase services for push notifications, real-time chat, and email-based password reset.',
         'Used WebSocket technology to build real-time chat features with low latency.',
         'Implemented secure file download functionality with proper storage handling.',
-        'Integrated REST APIs and ensured smooth backend communication.',
-        'Ensured cross-device compatibility, performance optimization, and bug fixing.',
       ],
     ),
 
@@ -46,7 +42,6 @@ class PortfolioRepository {
         'Built and maintained Android applications using Java and Kotlin.',
         'Developed applications for multiple sectors, enhancing functionality and user experience.',
         'Integrated RESTful APIs and handled JSON/XML data processing.',
-        'Improved app performance and stability through debugging and profiling tools.',
         'Followed MVVM architecture and best practices for clean, maintainable code.',
         'Collaborated with backend teams to deliver high-quality software.',
       ],
@@ -143,7 +138,7 @@ class PortfolioRepository {
           'Hypermarket app for Qatar — browse products, redeem rewards across all locations, integrated electronic payment.',
       features: ['Browse products', 'Redeem rewards across all locations', 'Integrated electronic payment'],
       tags: ['Flutter', 'Payments', 'Loyalty'],
-      platform: 'Mobile',
+      platform: '',
       images: [
         'assets/al_meera/screen1.png',
         'assets/al_meera/screen2.png',
@@ -177,14 +172,7 @@ class PortfolioRepository {
         'assets/loyalty/screen10.png',
       ],
     ),
-    ProjectModel(
-      title: 'Car Rental',
-      longDescription:
-          'Real-estate office app showcasing cars with specs, generating typed rental contracts that can be downloaded.',
-      features: ['Browse available cars', 'Generate rental contracts', 'Download contracts'],
-      tags: ['Flutter', 'PDF', 'Contracts'],
-      images: [],
-    ),
+
     ProjectModel(
       title: 'Lusso',
       longDescription:
@@ -210,7 +198,7 @@ class PortfolioRepository {
           'Charity platform for donations and volunteering — donation tracking, volunteer management, and event organization.',
       features: ['Donation tracking', 'Volunteer management', 'Event organization'],
       tags: ['Flutter', 'Charity', 'Web Admin'],
-      platform: 'Web + Mobile',
+      platform: '',
       images: [
         'assets/ehsan/screen1.jpg',
         'assets/ehsan/screen2.jpg',
@@ -245,12 +233,12 @@ class PortfolioRepository {
     ),
 
     ProjectModel(
-      title: 'Meeting Minutes App',
+      title: 'Committee Management App',
       longDescription:
-          'A meeting app that allows users to schedule and manage meetings, send invitations, and track attendance.',
+          'Manage committee sessions, actions, and decisions in one place, with easy tracking and follow-up.',
       features: ['Schedule meetings', 'Send invitations', 'Track attendance'],
-      tags: ['Flutter', 'Meetings', 'Productivity'],
-      platform: 'Mobile',
+      tags: ['Flutter', 'Sessions', 'Productivity'],
+      platform: '',
       images: [
         'assets/meeting/screen1.png',
         'assets/meeting/screen2.png',
@@ -280,8 +268,18 @@ class PortfolioRepository {
         'Dark and light mode interface',
       ],
       tags: ['Flutter', 'Enterprise', 'Workflow', 'Government'],
-      platform: 'Mobile',
-      images: [],
+      platform: '',
+      images: [
+        'assets/moj/screen1.png',
+        'assets/moj/screen2.png',
+        'assets/moj/screen3.png',
+        'assets/moj/screen4.png',
+        'assets/moj/screen5.png',
+        'assets/moj/screen6.png',
+        'assets/moj/screen7.png',
+        'assets/moj/screen8.png',
+        'assets/moj/screen9.png',
+      ],
     ),
   ];
 }

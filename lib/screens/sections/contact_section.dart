@@ -36,7 +36,7 @@ class ContactSection extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         height: 1.6,
-                        color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.8),
+                        color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.8),
                       ),
                     ),
                     const SizedBox(height: 28),
@@ -117,7 +117,7 @@ class _ContactBtnState extends State<_ContactBtn> {
           decoration: BoxDecoration(
             color: _hover
                 ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.primary.withOpacity(0.12),
+                : Theme.of(context).colorScheme.primary.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Row(
