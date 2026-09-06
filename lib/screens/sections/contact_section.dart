@@ -32,7 +32,7 @@ class ContactSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Have a project in mind or just want to say hi? My inbox is always open.",
+                      "Have a project in mind ? My inbox is always open.",
                       style: TextStyle(
                         fontSize: 18,
                         height: 1.6,
