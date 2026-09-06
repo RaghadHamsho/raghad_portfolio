@@ -10,15 +10,10 @@ import '../../repositories/portfolio_repository.dart';
 import '../../widgets/project_card.dart';
 import '../../widgets/section_title.dart';
 
-/// Figma links per project title. Add more entries whenever a project
-/// has a public Figma / prototype URL.
 const Map<String, String> kFigmaLinks = {
   'UI/UX Design': 'https://www.figma.com/file/your-file-id/Raghad-UI-UX?type=design',
 };
 
-/// A single UI/UX design entry shown as a distinct card in the projects
-/// section (icon-led, no screenshot hero — visually different from the
-/// image-based ProjectCard used for code projects).
 class UiUxItem {
   final String title;
   final String subtitle;
@@ -72,6 +67,20 @@ const List<UiUxItem> kUiUxItems = [
     icon: Icons.dashboard_rounded,
     tags: ['Web', 'Points', 'Design Systems'],
   ),
+ UiUxItem(
+  title: 'Qchem',
+  subtitle: 'B2B procurement & partner rewards portal for petrochemical distributors',
+  figmaUrl: 'https://www.figma.com/design/zUH91XqKDpMu97SnQiTVWX/QChem?node-id=47-6734&t=9jm65jh9EtwJCdvY-0',
+  icon: Icons.dashboard_rounded,
+  tags: ['Web', 'B2B', 'Procurement', 'KBD'],
+),
+UiUxItem(
+  title: 'Qatar Energy',
+  subtitle: 'Renewable energy investment & project tracking platform for sustainable development',
+  figmaUrl: 'https://reply-curry-88053644.figma.site',
+  icon: Icons.dashboard_rounded,
+  tags: ['Web', 'Renewable Energy', 'Investment', 'Sustainability'],
+),
 ];
 
 class ProjectsSection extends StatelessWidget {

@@ -54,7 +54,7 @@ class ContactSection extends StatelessWidget {
                           label: AppStrings.phone,
                           onTap: () => _open('tel:${AppStrings.phone}'),
                         ),
-                        _ContactBtn(icon: Icons.location_on_outlined, label: AppStrings.location, onTap: () {}),
+                      //  _ContactBtn(icon: Icons.location_on_outlined, label: AppStrings.location, onTap: () {}),
                       ],
                     ),
                     const SizedBox(height: 28),

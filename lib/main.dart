@@ -31,7 +31,7 @@ class PortfolioApp extends StatelessWidget {
         child: BlocBuilder<ThemeCubit, ThemeState>(
           builder: (context, state) {
             return MaterialApp(
-              title: 'Raghad Hamsho — Flutter Developer',
+              title: 'Raghad Hamsho — Software Engineer',
               debugShowCheckedModeBanner: false,
               theme: ThemeConfig.light,
               darkTheme: ThemeConfig.dark,
